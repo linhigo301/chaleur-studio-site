@@ -8,7 +8,7 @@
 
 `personnel-control-app` 與 `EMBERLITE_MAIN_v3_20260215_BASELINE_fix4_0_VSCODE` 是獨立專案。不得修改、解析或複製它們的原始碼到此站，也不得將本站推送至這兩個 Repository。
 
-本次只完成本機 Git 基礎與靜態網站。依使用者後續指示，GitHub Repository 建立、remote 設定與 push 均等待另行授權。
+本站已連結並推送至 [linhigo301/chaleur-studio-site](https://github.com/linhigo301/chaleur-studio-site)，GitHub Pages 已設定由 `main` 分支根目錄發佈。網站網址：[Chaleur Studio](https://linhigo301.github.io/chaleur-studio-site/)。
 
 ## 完整交付結構
 
@@ -113,11 +113,11 @@ JavaScript 只控制手機選單，支援 Escape 關閉與 `aria-expanded`。停
 
 繁中交班 DEMO 已預留位置；本次未提供英文 DEMO。EMBERLITE 是否有 DEMO 仍待確認。
 
-## GitHub Pages 部署（待另行授權）
+## GitHub Pages 部署
 
-網站已可部署，無建置工具或 Actions workflow 依賴。目前沒有 remote、沒有 push、沒有啟用 Pages。
+網站無建置工具或自訂 Actions workflow 依賴。`origin` 指向 `https://github.com/linhigo301/chaleur-studio-site.git`，目前分支 `main`，Pages 已啟用 HTTPS 並以 `main / (root)` 為發佈來源。後續經確認的更新可 commit 後執行 `git push origin main`，GitHub 會自動重新部署。
 
-取得授權與 GitHub 帳號資訊後：
+以下保留首次設定與重建部署的操作步驟（目前 Repository 與 origin 已存在，不要重複新增）：
 
 1. 在正確帳號建立全新的 **Public** Repository，名稱必須是 **chaleur-studio-site**。為避免遠端初始提交衝突，建立時不要另加 README、gitignore 或 licence。若已存在則先核對它確實是本站 Repository，不能改用其他產品 repo。
 2. 在本機專案根目錄執行 `git status`，核對只有本站公開內容；確認 `.preview/` 未納入版本控制。
@@ -143,7 +143,7 @@ JavaScript 只控制手機選單，支援 Escape 關閉與 `aria-expanded`。停
 
 ## 待補與驗證
 
-尚待正式截圖、EMBERLITE 產品資料、DEMO／下載 URL、授權細節、可選正式 Logo／favicon，以及 GitHub 建立與推送授權。現有 email：`linhigo301@gmail.com`（mailto）；繁中另列 LINE ID：`linhigo301`。
+尚待正式截圖、EMBERLITE 產品資料、DEMO／下載 URL、授權細節、可選正式 Logo／favicon。現有 email：`linhigo301@gmail.com`（mailto）；繁中另列 LINE ID：`linhigo301`。
 
 本次驗證範圍、結果與已知限制見 `DELIVERY.md`。
 

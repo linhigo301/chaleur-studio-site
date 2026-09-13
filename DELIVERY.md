@@ -7,9 +7,9 @@
 | 項目 | 結果 |
 | --- | --- |
 | 本機位置 | `C:\Users\user\chaleur-studio-site`，直接位於工作區根目錄，無重複子目錄 |
-| Git | 已初始化獨立本機 Repository；目前 branch：`main`；尚無 commit；檔案已儲存、未暫存 |
-| GitHub Repository | 尚未建立或確認，依使用者指示等候後續授權 |
-| Remote | 無，未設定 origin，未 push |
+| Git | 獨立本機 Repository；目前 branch：`main`，已建立首次提交並推送 |
+| GitHub Repository | 已確認公開 Repository：`linhigo301/chaleur-studio-site` |
+| Remote | `origin` → `https://github.com/linhigo301/chaleur-studio-site.git`；追蹤 `origin/main` |
 | 技術 | 純 HTML／CSS／JavaScript，無框架、套件、資料庫或後端 |
 | 品牌首頁 | Hero、品牌理念、Products／兩張產品卡、三項設計理念、聯絡資訊、語言切換、頁尾 |
 | 交班系統 | 依工單可確認範圍完成雙語介紹；包含約 20～30 床定位、12 項核心範圍、Local-first 理由、單機買斷方向、目前市場及規劃中市場 |
@@ -20,7 +20,7 @@
 | Desktop | Chrome 1440px，六頁功能與溢出檢查通過 |
 | Tablet | Chrome 768px，六頁功能與溢出檢查通過 |
 | Mobile | Chrome 390px 與 320px，六頁功能與溢出檢查通過；單欄排版、可展開選單 |
-| Pages 準備 | `.nojekyll` 與相對路徑已備妥，無建置需求；以 `/chaleur-studio-site/` 子路徑驗證成功 |
+| Pages 部署 | 已啟用 `main / (root)` 分支發佈與 HTTPS；網址 `https://linhigo301.github.io/chaleur-studio-site/` |
 | 公開聯絡方式 | Email mailto 連結、繁中 LINE ID；未加入個人真實姓名 |
 | 維護文件 | README、兩份產品內容交接文件、完整檔案樹與替圖／部署說明 |
 | 專案隔離 | 未讀取、修改或複製任何產品 Repository 原始碼 |
@@ -60,6 +60,7 @@ chaleur-studio-site/
 
 ## 驗證紀錄
 
+- 上線後已在 `https://linhigo301.github.io/chaleur-studio-site/` 重跑完整 24 組驗證，全部通過；HTTPS、六頁、CSS／JS、語言切換、重新整理、手機選單、無 JavaScript 導覽及 reduced-motion 均正常。
 - 使用 Playwright 控制本機 Google Chrome，驗證六頁 × 四種寬度，共 24 組。
 - 每組確認正確 `lang`、唯一 h1、無橫向溢出、語言連結的正確目標、HTTP 資源成功載入及頁內錨點存在。
 - 每頁皆以目錄網址直接載入並重新整理，驗證 GitHub Pages 專案子路徑不會遺失 CSS／JS。
@@ -72,8 +73,7 @@ chaleur-studio-site/
 
 ## 尚未完成項目
 
-- GitHub Repository 建立或確認、remote 連結、首次 commit／push、Pages 正式上線。
-- 真實 GitHub Pages 網址及 HTTPS 的上線後確認。
+- 正式截圖與下載內容仍需產品資料補齊，詳見下方 Placeholder。
 - 英文 DEMO 不在本次範圍內，也未預設已存在。
 - 未進行真實手機、Safari 或 Firefox 的實機測試；已完成 Chrome 響應式視窗驗證。
 
@@ -87,7 +87,7 @@ chaleur-studio-site/
 
 ## 需要人工確認項目
 
-1. 後續授權建立或連結正確的 `chaleur-studio-site` GitHub Repository，提供確認過的 URL。
+1. 上線後的品牌文案與視覺最終確認；GitHub Repository 與部署設定已完成。
 2. 兩個產品專案各自提供經人工確認的「網站產品資料.md」。尤其 EMBERLITE 的完整資料尚缺。
 3. 兩產品可公開的真實圖片。建議 1600 × 900 或保留原生比例；交班畫面需先去識別化。
 4. 正式 DEMO／下載連結、版本、支援環境與可公開的授權說明。
@@ -97,8 +97,8 @@ chaleur-studio-site/
 
 ## 人工啟用 Pages
 
-等完成正確 Repository 的首次推送後，前往 **Settings → Pages → Build and deployment → Deploy from a branch → main → / (root) → Save**。完整 Repository 建立、推送與 Custom Domain 步驟列於 README；未取得後續授權前不操作遠端。
+已完成設定。如需查看，前往 **Settings → Pages → Build and deployment → Deploy from a branch → main → / (root)**。後續經確認的網站修改推送到 `main` 後會自動部署。完整操作與 Custom Domain 步驟列於 README。
 
 ## 已知問題與限制
 
-目前測試範圍內沒有已知的阻塞性導覽或排版問題。本站仍未公開上線，實際產品畫面與下載尚待正式資料；這些是刻意保留的內容缺項。系統字型會依使用裝置略有差異。交付 HTML 為人工維護的雙語靜態檔，後續內容修改需同步兩語言頁面。
+目前測試範圍內沒有已知的阻塞性導覽或排版問題。實際產品畫面與下載尚待正式資料，這些是刻意保留的內容缺項。系統字型會依使用裝置略有差異。交付 HTML 為人工維護的雙語靜態檔，後續內容修改需同步兩語言頁面。
