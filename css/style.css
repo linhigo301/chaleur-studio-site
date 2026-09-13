@@ -237,13 +237,14 @@ button { font: inherit; }
   *,*::before,*::after { transition: none!important; }
 }
 
-/* WEB-005: product content and screenshot components. */
+/* Product content and screenshot components (WEB-005 / WEB-006). */
 .handover-page .product-hero { padding-block: 44px; }
 .handover-page .product-hero > p:not(.eyebrow) { max-width: 640px; }
-.preview-notice { padding: 16px 22px; margin-bottom: 24px; border-left: 2px solid var(--accent); background: var(--sage); }
+.preview-notice { padding: 16px 22px; margin-bottom: 24px; border-left: 2px solid var(--line); color: var(--muted-strong); }
 .preview-notice p { margin: 0; font-size: var(--type-secondary); }
 .product-screen-frame { display: block; width: 100%; border: 1px solid var(--line); }
 .product-screen-frame img { display: block; width: 100%; height: auto; }
+.calendar-screen { width: 100%; max-width: 956px; margin-inline: auto; }
 .product-screen figcaption { display: flex; align-items: baseline; gap: 8px 16px; flex-wrap: wrap; }
 .screen-caption { flex-basis: 100%; }
 .screen-badge { font-size: var(--type-meta); color: var(--muted); }
@@ -255,7 +256,7 @@ button { font: inherit; }
 .handover-page .feature-heading-grid { row-gap: 16px; }
 .feature-heading-grid > .eyebrow { grid-column: 1 / -1; margin: 0; }
 .capability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.capability-group { border-top: 1px solid var(--line); padding-top: 16px; min-width: 0; }
+.capability-group { min-width: 0; }
 .capability-group h3 { margin: 0 0 12px; font-size: var(--type-principle); font-weight: 500; line-height: var(--leading-heading); }
 .capability-group ul { padding-left: 1.2em; margin: 0; }
 .capability-group li + li { margin-top: 6px; }
@@ -265,7 +266,9 @@ button { font: inherit; }
 .product-specs thead { background: var(--sage); }
 .product-specs th { font-weight: 500; }
 .product-specs tbody th { width: 36%; }
-.handover-page .download-item { display: flex; flex-direction: column; }
+.handover-page .download-item { display: flex; flex-direction: column; border: 0; border-top: 1px solid var(--line); padding: 22px 0; }
+.handover-page .download-item .download-meta { font-size: var(--type-secondary); color: var(--muted-strong); margin: auto 0 12px; }
+.handover-page .download-item .button { align-self: flex-start; }
 .handover-page .download-item .unavailable { align-self: flex-start; margin-top: auto; }
 .handover-page .contact { border-top: 1px solid var(--line); }
 .handover-page .contact-inner > div:first-child { max-width: 640px; }
