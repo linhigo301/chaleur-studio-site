@@ -154,3 +154,6 @@ JavaScript 只控制手機選單，支援 Escape 關閉與 `aria-expanded`。停
 Font Stack、全部字級、標題文案、雙語 Chrome／Edge 驗證與人工確認項目見 [Typography 第二階段交付](TYPOGRAPHY.md)。
 
 GitHub 設定步驟已於 2026-09-13 核對官方文件：[Pages 發佈來源](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)、[自訂網域](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)。
+
+
+CSS 快取：六頁 stylesheet URL 使用內容雜湊版本參數。每次修改 css/style.css，應同步更新六頁的 ?v= 值，避免新 HTML 搭配舊 CSS。
