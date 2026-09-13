@@ -1,0 +1,43 @@
+/* Homepage spacing and component hierarchy; shared typography tokens stay unchanged. */
+.home .hero-foot { align-items: center; font-size: 14px; color: var(--muted-strong); }
+.home .products { padding: 72px 0 88px; }
+.home .philosophy { padding: 72px 0; }
+.home .contact { padding: 64px 0; }
+.home .footer { padding: 22px 0; }
+.home .section-heading { margin-bottom: 44px; }
+.home .section-heading > div { width: 100%; min-width: 0; }
+.products-kicker { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-bottom: 16px; }
+.home .products-kicker .eyebrow { margin: 0; }
+.home .section-number { display: block; margin: 0; font-size: 14px; font-weight: 500; line-height: 1.5; color: var(--muted-strong); }
+.home .section-heading p:not(.eyebrow) { margin: 20px 0 0; }
+.home .product-grid { gap: clamp(24px, 2.2vw, 32px); max-width: 1184px; }
+.home .card-visual { margin-bottom: 0; }
+.placeholder-copy { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; max-width: 100%; }
+.home .placeholder-title { min-height: 0; font-size: clamp(26px, 2vw, 30px); font-weight: 500; }
+.home .placeholder-caption { font-size: 13px; color: #62615c; }
+.home .card-content { padding: 32px 30px 28px; }
+.home .card-content h3 { margin: 20px 0 16px; }
+.home .card-content p { margin-bottom: 24px; }
+.home .card-link { padding-top: 12px; min-height: 48px; }
+.availability-note { font-size: var(--type-secondary); white-space: nowrap; }
+@media(max-width:1100px) {
+  .home .products { padding: 64px 0 72px; }
+  .home .philosophy { padding: 64px 0; }
+  .home .contact { padding: 56px 0; }
+  .home .section-heading { margin-bottom: 40px; }
+  .home .card-content { padding: 30px 24px 26px; }
+  .home .meta { flex-direction: column; align-items: flex-start; gap: 6px; }
+}
+@media(max-width:700px) {
+  .home .hero-foot { align-items: flex-start; font-size: 13px; gap: 10px; }
+  .home .products { padding: 48px 0 56px; }
+  .home .philosophy { padding: 48px 0; }
+  .home .contact { padding: 40px 0; }
+  .home .footer { padding: 20px 0; }
+  .home .section-heading { margin-bottom: 36px; }
+  .home .section-heading p:not(.eyebrow) { margin-top: 16px; }
+  .products-kicker { gap: 12px; flex-wrap: wrap; }
+  .home .product-grid { gap: 36px; }
+  .home .card-visual { height: 220px; }
+  .home .card-content { padding: 28px 24px 24px; }
+}
