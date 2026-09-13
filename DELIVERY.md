@@ -129,3 +129,8 @@ H1 桌面採 `clamp(3.2rem, 5vw, 4.8rem)`；手機採 `clamp(2.375rem, 10vw, 2.7
 驗證完成：六頁 × 六尺寸，共 36 組頁面檢查；另對全部主要閱讀文字檢查 computed font-size 不低於 16px。中英文語言切換、重新整理、Header、產品卡、Contact、手機選單、無 JavaScript 導覽與減少動態效果偏好均正常，無橫向溢出。已檢視桌面、平板、手機的中英文全頁截圖。
 
 未變更 DEMO／下載功能、下載連結、價格、產品功能或正式產品資料。維持原有米白、深綠、暖橘配色及產品卡概念圖。沒有已知需人工排除的排版問題；實體裝置、Safari／Firefox 的字型呈現尚未實測，最終閱讀感受可由品牌方再確認。
+
+
+## Typography 第二階段（2026-09-14）
+
+現行 Typography 規則、字級與驗證結果以 [TYPOGRAPHY.md](TYPOGRAPHY.md) 為準。上方 WEB-002 為歷史紀錄；其 CSS 覆蓋區段、1.75 正文行距、手機 12px metadata 與 32px Hero 已移除／整合。

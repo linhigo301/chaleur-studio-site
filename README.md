@@ -147,10 +147,10 @@ JavaScript 只控制手機選單，支援 Escape 關閉與 `aria-expanded`。停
 
 本次驗證範圍、結果與已知限制見 `DELIVERY.md`。
 
-## WEB-002 字級維護
+## Typography 維護
 
-`css/style.css` 的 WEB-002 區段以 `--type-h1`、`--type-h2`、`--type-h3`、`--type-body`、`--type-small`、`--type-control` 與 `--leading-body` 管理字級與行高。主要正文桌面 18px、平板／手機 17px；導覽與按鈕 16px；輔助標籤桌面 13px、手機 12px。狀態、圖說及聯絡資訊至少 16px。不要再為主要說明加入較小的 inline font-size。
+最終字級由 css/style.css 頂部 tokens、集中 Typography 規則及 Responsive tokens 管理。WEB-002 獨立覆蓋層已整合移除；不要追加下一代 Typography override。正文桌面／平板 18px、手機 17px，行距 1.63；輔助資訊至少 13px。
 
-雙語首頁 Hero 採文字與留白，右側抽象圖像及其 CSS 已移除；中文主標更新為「把麻煩整理好，把簡單留給日常。」。產品卡概念圖維持原樣，待正式圖片提供後替換。詳細尺寸與驗證結果見交付紀錄的 WEB-002 區段。
+Font Stack、全部字級、標題文案、雙語 Chrome／Edge 驗證與人工確認項目見 [Typography 第二階段交付](TYPOGRAPHY.md)。
 
 GitHub 設定步驟已於 2026-09-13 核對官方文件：[Pages 發佈來源](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)、[自訂網域](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)。
