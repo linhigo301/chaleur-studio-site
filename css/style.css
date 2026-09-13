@@ -19,7 +19,6 @@
   --type-meta: .8125rem;
   --type-eyebrow: .875rem;
   --type-control: 1rem;
-  --type-email: clamp(1.375rem, 2.1vw, 1.875rem);
   --leading-hero: 1.18;
   --leading-heading: 1.3;
   --leading-body: 1.63;
@@ -100,7 +99,7 @@ a:focus-visible,button:focus-visible { outline: 3px solid var(--accent); outline
 .contact-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; }
 .contact .eyebrow { margin-bottom: 12px; }
 .contact-email { text-decoration: none; border-bottom: 1px solid var(--ink); padding-bottom: 8px; overflow-wrap: anywhere; }
-.contact-details p { text-align: right; }
+.contact-details p { text-align: left; }
 .footer { border-top: 1px solid var(--line); padding: 25px 0; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
 .footer .wordmark { font-size: 21px; color: var(--ink); }
@@ -162,7 +161,7 @@ button { font: inherit; }
 .meta { letter-spacing: normal; text-transform: none; }
 .navigation, .language, .button, .text-link, .card-link, .js .menu-toggle { font-size: var(--type-control); }
 .navigation a, .language a, .text-link { display: inline-flex; align-items: center; min-height: 44px; }
-.contact-email { display: inline-block; min-height: 48px; font-family: var(--serif); font-size: var(--type-email); line-height: 1.5; }
+.contact-email { display: inline-flex; align-items: center; min-height: 48px; font-family: var(--sans); font-size: var(--type-secondary); line-height: var(--leading-body); color: var(--muted-strong); }
 .arrow { font-size: 1.25rem; font-weight: 400; }
 .hero > div, .philosophy-layout > div { min-width: 0; }
 /* English keeps its own word wrapping; the logo retains its existing typeface. */
@@ -183,7 +182,6 @@ button { font: inherit; }
   .section-heading { flex-wrap: wrap; gap: 12px; }
   .section-number { margin-top: 0; }
   .contact-inner { align-items: flex-start; flex-direction: column; gap: 24px; }
-  .contact-details p { text-align: left; }
   .download-grid { grid-template-columns: 1fr; }
 }
 @media(max-width:700px) {
@@ -209,7 +207,6 @@ button { font: inherit; }
   .philosophy .lead { max-width: none; }
   .contact { padding: 55px 0; }
   .contact-inner { align-items: flex-start; flex-direction: column; gap: 18px; }
-  .contact-details p { text-align: left; }
   .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
   .footer-inner p { margin: 0; }
   .detail-grid { grid-template-columns: 1fr; gap: 22px; padding: 36px 0; }

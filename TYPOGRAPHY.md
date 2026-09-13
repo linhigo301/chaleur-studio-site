@@ -22,7 +22,6 @@
 --type-meta: .8125rem;
 --type-eyebrow: .875rem;
 --type-control: 1rem;
---type-email: clamp(1.375rem, 2.1vw, 1.875rem);
 --leading-hero: 1.18;
 --leading-heading: 1.3;
 --leading-body: 1.63;
@@ -46,7 +45,7 @@ Hero 與產品 H1／卡片標題用 Serif，H2 與理念小標用 Sans、字重 
 | 390 × 844 | 39 | 31.2 | 26 | 24 | 17 | 15 | 13 / 13 | 16 / 16 |
 | 375 × 812 | 38 | 30 | 26 | 24 | 17 | 15 | 13 / 13 | 16 / 16 |
 
-Body line-height 1.63，中文正文 letter-spacing normal。主要長段落最大 44rem（704px），Hero 副標 680px；卡片與理念沿用原欄寬控制行長。Button 至少 48px，卡片連結至少 52px，功能文字連結／導覽／語言切換至少 44px，Email 至少 48px。Email 字級 22–30px，可正常辨識且保留 mailto。
+Body line-height 1.63，中文正文 letter-spacing normal。主要長段落最大 44rem（704px），Hero 副標 680px；卡片與理念沿用原欄寬控制行長。Button 至少 48px，卡片連結至少 52px，功能文字連結／導覽／語言切換至少 44px，Email 至少 48px。Email 與 LINE ID 統一使用 Sans、Secondary 字級（桌面／平板 16px、手機 15px）、1.63 行距及較深 muted，並靠左對齊。六頁信箱前均加上「EMAIL ·」，保留 mailto 與至少 48px 點擊高度。
 
 ## 14：文字顏色
 
