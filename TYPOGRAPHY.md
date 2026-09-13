@@ -90,3 +90,6 @@ Windows 已安裝 Google Chrome、Microsoft Edge，使用 Playwright 啟動各�
 ## 24：尚待人工確認
 
 請品牌方以正式部署頁面確認 Noto Serif Hero／Sans H2 的最終氣質、閱讀密度與字重。測試使用 Windows 桌面瀏覽器的 responsive viewport，並非實體手機；macOS／iOS 字型 fallback、作業系統縮放及使用者自訂字級尚待實機確認。本階段停止，不自動進行 spacing、卡片比例、產品圖像、Header 或動畫精修。
+
+
+現行規則以 [WEB-004_FIX 交付報告](WEB004.md) 為準：Typography 選擇器進一步分層，Contact 改用 Ink，首頁抽象圖改為純文字 Placeholder。上方舊版本描述保留作歷史紀錄。

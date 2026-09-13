@@ -134,3 +134,6 @@ H1 桌面採 `clamp(3.2rem, 5vw, 4.8rem)`；手機採 `clamp(2.375rem, 10vw, 2.7
 ## Typography 第二階段（2026-09-14）
 
 現行 Typography 規則、字級與驗證結果以 [TYPOGRAPHY.md](TYPOGRAPHY.md) 為準。上方 WEB-002 為歷史紀錄；其 CSS 覆蓋區段、1.75 正文行距、手機 12px metadata 與 32px Hero 已移除／整合。
+
+
+現行規則以 [WEB-004_FIX 交付報告](WEB004.md) 為準：Typography 選擇器進一步分層，Contact 改用 Ink，首頁抽象圖改為純文字 Placeholder。上方舊版本描述保留作歷史紀錄。

@@ -8,6 +8,8 @@
   --line: #d8ddd2;
   --accent: #a4482e;
   --sage: #e6eadd;
+  --placeholder-paper: #f2ecdf;
+  --placeholder-ink: #24231f;
   --sans: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --serif: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
   --type-hero: clamp(3.5rem, 4.7vw, 4.5rem);
@@ -19,6 +21,7 @@
   --type-meta: .8125rem;
   --type-eyebrow: .875rem;
   --type-control: 1rem;
+  --type-placeholder-title: clamp(1.5rem, 2vw, 1.75rem);
   --leading-hero: 1.18;
   --leading-heading: 1.3;
   --leading-body: 1.63;
@@ -37,14 +40,13 @@ a:focus-visible,button:focus-visible { outline: 3px solid var(--accent); outline
 .skip:focus { top: 10px; }
 .header { border-bottom: 1px solid var(--line); background: var(--paper); }
 .header-inner { min-height: 100px; display: flex; align-items: center; gap: 44px; }
-.wordmark { text-decoration: none; font-family: Georgia, 'Noto Serif TC', 'PMingLiU', serif; font-size: 29px; letter-spacing: -1px; white-space: nowrap; }
-.wordmark span { font-style: italic; font-weight: normal; }
+.wordmark { text-decoration: none; white-space: nowrap; }
 .navigation { display: flex; align-items: center; gap: 32px; margin-left: auto; }
 .navigation a { text-decoration: none; }
 .navigation a:hover,.language a:hover { color: var(--accent); }
 .language { display: flex; align-items: center; gap: 10px; white-space: nowrap; }
 .language a { text-decoration: none; }
-.language [aria-current] { font-weight: 700; border-bottom: 1px solid var(--ink); }
+.language [aria-current] { border-bottom: 1px solid var(--ink); }
 .language .divider { color: #92998e; }
 .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; border-radius: 2px; color: var(--ink); padding: 6px 12px; }
 .eyebrow { display: flex; align-items: center; gap: 12px; margin: 0 0 28px; }
@@ -67,19 +69,10 @@ a:focus-visible,button:focus-visible { outline: 3px solid var(--accent); outline
 .products { border-top: 1px solid var(--line); }
 .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .product-card { border: 1px solid var(--line); background: var(--white); display: flex; flex-direction: column; min-width: 0; }
-.card-visual { height: 248px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; margin: 12px; background: var(--sage); }
-.card-visual::after { content: ''; position: absolute; inset: 22px; border: 1px solid #75887128; pointer-events: none; }
-.visual-tag { position: absolute; left: 22px; top: 16px; z-index: 1; }
-.paper-stack { width: 155px; height: 158px; background: #faf7ef; border: 1px solid #c2c7b5; transform: rotate(-7deg); box-shadow: 9px 10px 0 #c6ceba; display: flex; flex-direction: column; justify-content: center; gap: 16px; padding: 30px; }
-.paper-stack i { height: 1px; background: #9ca58c; display: block; }
-.paper-stack i:first-child { width: 45%; height: 5px; background: #6b7c63; }
-.paper-stack i:last-child { width: 70%; }
-.ember-visual { background: #373d35; color: #f3ddbd; }
-.ember-rings { width: 143px; height: 143px; border: 1px solid #b29978; border-radius: 50%; position: relative; display: grid; place-items: center; }
-.ember-rings::before { content: ''; position: absolute; inset: 14px; border: 1px solid #86775f; border-radius: 50%; }
-.ember-rings::after { content: ''; position: absolute; width: 32px; height: 32px; background: #ca7d4f; border-radius: 50%; }
-.ember-visual::after { border-color: #b2997833; }
-.visual-note { position: absolute; bottom: 12px; right: 18px; opacity: .85; }
+/* Product image slot: retain existing desktop/mobile heights for future images. */
+.card-visual { height: 248px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; margin: 12px; padding: 24px; border-radius: 0; background: var(--placeholder-paper); color: var(--placeholder-ink); text-align: center; }
+.placeholder-title { margin: 0; min-height: 2.6em; display: flex; align-items: center; justify-content: center; }
+.placeholder-caption { margin: 0; }
 .card-content { padding: 20px 30px 28px; display: flex; flex: 1; flex-direction: column; }
 .meta { display: flex; justify-content: space-between; gap: 6px 16px; flex-wrap: wrap; align-items: baseline; }
 .card-content h3 { margin: 15px 0 12px; }
@@ -102,7 +95,7 @@ a:focus-visible,button:focus-visible { outline: 3px solid var(--accent); outline
 .contact-details p { text-align: left; }
 .footer { border-top: 1px solid var(--line); padding: 25px 0; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
-.footer .wordmark { font-size: 21px; color: var(--ink); }
+.footer .wordmark { color: var(--ink); }
 .breadcrumb { margin-top: 36px; }
 .breadcrumb a { text-decoration: none; }
 .product-hero { max-width: 840px; padding: 60px 0; }
@@ -141,33 +134,45 @@ figcaption { margin-top: 12px; }
 .contact-details { flex-shrink: 0; }
 .detail-grid .market-note { margin-top: 18px; }
 
-/* Typography: display → reading text → secondary → metadata → controls. */
+/* Base Typography */
 body { font-family: var(--sans); font-size: var(--type-body); line-height: var(--leading-body); letter-spacing: normal; }
 button { font: inherit; }
+/* Heading */
 .hero h1, .product-hero h1 { font-family: var(--serif); font-size: var(--type-hero); font-weight: 500; line-height: var(--leading-hero); letter-spacing: -.025em; }
 .hero h1 em { font-style: normal; color: var(--accent); }
 .section h2, .contact h2, .detail-grid h2 { font-family: var(--sans); font-size: var(--type-h2); font-weight: 500; line-height: var(--leading-heading); letter-spacing: -.02em; text-wrap: pretty; }
 .card-content h3 { font-family: var(--serif); font-size: var(--type-h3); font-weight: 500; line-height: var(--leading-heading); }
 .principle h3, .download-item h3 { font-size: var(--type-principle); font-weight: 500; line-height: var(--leading-heading); }
-.hero .intro, .product-hero .intro, .section-heading p, .card-content p, .philosophy .lead, .principle p, .contact p, .detail-grid p, .feature-grid li, .market-row, .download-item p { font-size: var(--type-body); line-height: var(--leading-body); color: var(--ink); max-width: 44rem; }
-.contact-details p, .breadcrumb, .chip, .status, .unavailable, .screenshot-placeholder span, figcaption, .meta { font-size: var(--type-secondary); color: var(--muted-strong); }
-.status { color: var(--accent); }
+/* Body: reading text inherits the base size and leading; no label overrides. */
+.hero .intro, .product-hero .intro, .section-heading p:not(.eyebrow), .card-content p, .philosophy .lead, .principle p, .contact-inner > div:not(.contact-details) > p:not(.eyebrow), .detail-grid p:not(.eyebrow), .feature-grid li, .market-row { font-size: var(--type-body); line-height: var(--leading-body); color: var(--ink); }
+.detail-grid > div { max-width: 44rem; }
+/* Secondary */
+.breadcrumb, .chip, .unavailable, .screenshot-placeholder span, figcaption, .meta { font-size: var(--type-secondary); color: var(--muted-strong); }
+.status { font-size: var(--type-secondary); color: var(--accent); }
 .screenshot-placeholder strong { font-size: var(--type-body); font-weight: 500; }
-.hero-foot, .visual-tag, .visual-note, .principle .num, .footer-inner, .section-number { font-size: var(--type-meta); }
+/* Metadata */
+.hero-foot, .principle .num, .footer-inner, .section-number { font-size: var(--type-meta); }
 .hero-foot, .footer-inner, .section-number { color: var(--muted); }
-.eyebrow, .section-heading .eyebrow, .contact .eyebrow { font-size: var(--type-eyebrow); font-weight: 600; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-.hero-foot, .visual-tag { letter-spacing: .075em; text-transform: uppercase; }
-.visual-note { letter-spacing: normal; }
+.eyebrow { font-size: var(--type-eyebrow); font-weight: 600; line-height: 1.5; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.hero-foot { letter-spacing: .075em; text-transform: uppercase; }
 .meta { letter-spacing: normal; text-transform: none; }
+/* Components */
+.language [aria-current] { font-weight: 700; }
+.wordmark { font-family: Georgia, 'Noto Serif TC', 'PMingLiU', serif; font-size: 29px; letter-spacing: -1px; }
+.wordmark span { font-style: italic; font-weight: normal; }
+.footer .wordmark { font-size: 21px; }
+.placeholder-title { font-family: var(--sans); font-size: var(--type-placeholder-title); font-weight: 500; font-style: normal; line-height: var(--leading-heading); letter-spacing: normal; }
+.placeholder-caption { font-family: var(--sans); font-size: var(--type-meta); font-weight: 400; line-height: 1.5; letter-spacing: .06em; }
 .navigation, .language, .button, .text-link, .card-link, .js .menu-toggle { font-size: var(--type-control); }
 .navigation a, .language a, .text-link { display: inline-flex; align-items: center; min-height: 44px; }
-.contact-email { display: inline-flex; align-items: center; min-height: 48px; font-family: var(--sans); font-size: var(--type-secondary); line-height: var(--leading-body); color: var(--muted-strong); }
+.contact-email, .contact-details p { font-family: var(--sans); font-size: var(--type-secondary); line-height: var(--leading-body); color: var(--ink); }
+.contact-email { display: inline-flex; align-items: center; min-height: 48px; }
 .arrow { font-size: 1.25rem; font-weight: 400; }
 .hero > div, .philosophy-layout > div { min-width: 0; }
 /* English keeps its own word wrapping; the logo retains its existing typeface. */
 :lang(en-GB) h1, :lang(en-GB) h2, :lang(en-GB) h3 { overflow-wrap: break-word; }
 
-/* Responsive layout and token changes; no separate typography override layer. */
+/* Responsive: token changes and necessary layout adaptations only. */
 @media(max-width:1000px) {
   :root { --type-hero: clamp(3rem, 6.5vw, 3.75rem); --type-h2: 2.5rem; --type-h3: 1.75rem; }
   .container { width: calc(100% - 56px); }
@@ -223,7 +228,7 @@ button { font: inherit; }
 @media(max-width:380px) {
   .header-inner { gap: 9px; }
   .feature-grid { grid-template-columns: 1fr; }
-  .header-inner .wordmark { flex-basis: 100%; font-size: 24px; }
+  .header-inner .wordmark { flex-basis: 100%; }
   .language { margin-left: 0; margin-right: auto; }
   .card-content { padding-inline: 18px; }
 }

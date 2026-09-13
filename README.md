@@ -93,7 +93,7 @@ JavaScript 只控制手機選單，支援 Escape 關閉與 `aria-expanded`。停
 
 ## 圖片與品牌識別
 
-目前沒有正式圖片，頁面使用 CSS 幾何插畫（已標示概念示意、非產品畫面）及 HTML 占位，不引用不存在的圖片，不會破圖。品牌只使用 Chaleur Studio 文字，未自創正式 Logo 或 favicon。
+目前沒有正式圖片。兩語言首頁產品卡使用相同暖米白純文字 Placeholder；產品詳情頁保留既有待截圖區，不引用不存在的圖片。品牌只使用 Chaleur Studio 文字，未自創正式 Logo 或 favicon。
 
 | 待提供素材 | 建議尺寸／格式 | 放置檔案 | 替換位置 |
 | --- | --- | --- | --- |
@@ -157,3 +157,6 @@ GitHub 設定步驟已於 2026-09-13 核對官方文件：[Pages 發佈來源](h
 
 
 CSS 快取：六頁 stylesheet URL 使用內容雜湊版本參數。每次修改 css/style.css，應同步更新六頁的 ?v= 值，避免新 HTML 搭配舊 CSS。
+
+
+WEB-004 現行 Typography 與產品 Placeholder 規則、全部 24 項驗證回報见 [WEB004.md](WEB004.md)。首頁已移除舊紙張／同心圓插圖與相關 CSS；先前交付紀錄中的概念圖描述為歷史狀態。
