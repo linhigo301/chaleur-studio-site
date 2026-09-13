@@ -236,3 +236,25 @@ button { font: inherit; }
   html { scroll-behavior: auto; }
   *,*::before,*::after { transition: none!important; }
 }
+
+/* Product handoff screenshots keep their native aspect ratio and original pixels. */
+.preview-notice { padding: 24px 28px; margin-bottom: 28px; border-left: 3px solid var(--accent); background: var(--sage); }
+.preview-notice strong { font-size: var(--type-eyebrow); letter-spacing: .08em; color: var(--accent); }
+.preview-notice p { margin: 10px 0 0; }
+.product-screen img { display: block; width: 100%; max-width: 100%; height: auto; border: 1px solid var(--line); }
+.product-screen > a { display: block; }
+.product-screen figcaption { max-width: 960px; }
+.screen-note { display: block; margin: 6px 0; }
+.workflow-feature { padding-bottom: 56px; }
+.workflow-feature .detail-grid { padding-bottom: 28px; }
+.pending-list { margin: 0 0 24px; padding-left: 1.3em; }
+.pending-list li { padding-bottom: 12px; }
+.version-detail { padding: 28px 0; border-block: 1px solid var(--line); }
+.version-detail summary { cursor: pointer; padding: 12px 0; font-size: var(--type-body); }
+.version-detail summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+@media(max-width:700px) {
+  .preview-notice { padding: 20px; }
+  .workflow-feature { padding-bottom: 36px; }
+}
+
+.supplemental-screen { max-width: 956px; margin-inline: auto; }
