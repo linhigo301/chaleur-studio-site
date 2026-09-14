@@ -289,3 +289,30 @@ button { font: inherit; }
 @media(min-width:1001px) {
   .handover-page .product-summary-grid { align-items: center; }
 }
+/* EMBERLITE uses the shared product rhythm with intact device screenshots. */
+.emberlite-page .product-hero { padding-block: 44px; }
+.emberlite-page .product-subtitle { margin: -6px 0 24px; font-size: var(--type-h3); line-height: var(--leading-heading); }
+.emberlite-page .detail-grid { grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap: 16px 48px; padding-block: 44px; }
+.emberlite-page .detail-grid > div { max-width: 640px; }
+.emberlite-page .detail-grid p:last-child { margin-bottom: 0; }
+.emberlite-page .workflow-feature .detail-grid { padding-bottom: 24px; }
+.emberlite-page .product-screen { max-width: 1200px; margin-inline: auto; }
+.emberlite-page #spectrum .product-screen { max-width: 1060px; }
+.emberlite-page .contact { border-top: 1px solid var(--line); }
+.emberlite-page .contact-inner > div:first-child { max-width: 640px; }
+.emberlite-page .product-bottom { margin-top: 0; }
+.emberlite-setup { margin: 0; }
+.emberlite-setup > div + div { margin-top: 24px; }
+.emberlite-setup dt { font-weight: 600; margin-bottom: 6px; }
+.emberlite-setup dd { margin: 0; }
+.emberlite-card-visual { padding: 0; gap: 8px; background: transparent; }
+.emberlite-card-visual img { display: block; width: 100%; min-height: 0; height: auto; max-height: 215px; object-fit: contain; }
+.emberlite-card-visual figcaption { margin: 0; font-size: var(--type-meta); }
+@media(max-width:1000px) {
+  .emberlite-page .detail-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+@media(max-width:700px) {
+  .emberlite-page .product-hero { padding-block: 32px; }
+  .emberlite-page .detail-grid { padding-block: 32px; gap: 16px; }
+  .emberlite-page .workflow-feature .detail-grid { padding-bottom: 20px; }
+}

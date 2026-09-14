@@ -1,27 +1,9 @@
-# EMBERLITE｜網站產品資料
+# EMBERLITE｜網站內容紀錄
 
-狀態：Placeholder，等待 EMBERLITE 專案產出的「網站產品資料.md」及人工確認。
+2026-09-14：完成繁中與 en-GB 產品頁，並同步首頁卡片。使用者已確認發布，透過既有 GitHub Pages main 分支部署。
 
-## 已確認
+產品名稱為 EMBERLITE；副標為「暗房放大機曝光控制系統」／「Exposure control for the darkroom」。內容介紹實體曝光操作、試條步進、放相記錄、四階段化學計時，以及需搭配感測器與適用燈具的光譜配置功能。
 
-- 品牌：Chaleur Studio。
-- 產品名稱：EMBERLITE。
-- 產品類型：暗房計時器 / Darkroom Timer。
-- 獨立產品、獨立開發，不將其原始碼放入本站。
+網站採用三張 Web Console 實機截圖，依序為放相記錄、光譜詳情、濾鏡庫。主圖為 emberlite-exposure-log.png；圖片位於 images/emberlite/，保留原始像素、比例及 N/A，可點擊查看原尺寸。光譜圖只展示既有記錄，不代表本次量測或校正成功。
 
-## Placeholder
-
-- 產品完整介紹、功能、使用方式、支援平台。
-- 正式產品圖片與圖說。
-- 授權資訊、DEMO 是否提供、下載連結。
-
-未確認前不得填入推測的功能、平台、版本、價格或下載按鈕。
-
-## 網站更新位置
-
-- `products/emberlite/index.html`
-- `en/products/emberlite/index.html`
-- 首頁卡片：`index.html`、`en/index.html`
-- 截圖：`images/emberlite/overview.webp`（待提供，現未引用此檔案）
-
-此文件是網站內容的交接紀錄，不會自動產生 HTML。只依人工確認後的資料同步更新頁面。
+文案依已提供的官網建議稿整理。未加入價格、下載、上市狀態、相容性或精度承諾。內部交接文件與產品原始碼未複製至網站。
