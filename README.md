@@ -1,5 +1,7 @@
 # Chaleur Studio 官方網站
 
+2026-09-14 WEB-006 Analytics：六頁已加入集中 GA4 架構、瀏覽器管理者排除與四種互動事件。使用者已確認發布，透過既有 GitHub Pages main 分支部署。Measurement ID 仍為 Placeholder，沒有正式送出 Analytics。操作與啟用前待辦見下方 Analytics；本次工單與既有同編號的產品頁收尾工單分開記錄於 [Analytics 交付紀錄](WEB006-ANALYTICS.md)。
+
 2026-09-14 EMBERLITE：完成繁中／en-GB 產品頁與首頁卡片，定位為暗房放大機曝光控制系統，採放相記錄、光譜詳情、濾鏡庫三張實機圖。圖片位於 images/emberlite/；未複製內部交接文件或產品原始碼。Chrome 375／768／1440px 四頁共 12 組檢查通過，並檢視桌機與手機排版。使用者已確認發布，透過既有 GitHub Pages main 分支部署；以下 EMBERLITE 占位描述為歷史紀錄。
 
 2026-09-14 WEB-006：完成產品頁專業收尾，統一服務對象用語、調整本機資料說明、降低重複框線、第五張月曆限制原始寬度、分開 DEMO 版本資訊與下載按鈕，並補齊 canonical／Open Graph。五張原圖與下載網址不變。Chrome／Edge 六種尺寸雙語共 24 組驗證通過，依工單直接發布；詳見 [WEB-006 交付紀錄](WEB006.md)。
@@ -82,7 +84,7 @@ python -m http.server 8000 --bind 127.0.0.1
 
 首頁包含品牌 Hero、產品介紹／兩張卡片、品牌與設計理念、聯絡資訊、頁尾。交班系統頁包含設計規模、核心範圍、Local-first、授權方向、市場狀態、截圖占位、DEMO／下載占位。EMBERLITE 頁只含已確認名稱、產品類型與待補區域。
 
-JavaScript 只控制手機選單，支援 Escape 關閉與 `aria-expanded`。停用 JavaScript 時直接顯示導覽。響應式斷點為 1000px 與 700px；手機改為單欄、可展開導覽。已設定 reduced-motion，無外部字型、追蹤器或第三方執行時請求。
+JavaScript 控制手機選單、交班頁情境切換及集中 Analytics。手機選單支援 Escape 關閉與 `aria-expanded`；停用 JavaScript 時直接顯示導覽。響應式斷點為 1000px 與 700px；手機改為單欄、可展開導覽。已設定 reduced-motion，無外部字型。Analytics 保持 Placeholder 時不載入 Google；填入正式 ID 並通過設定條件後才會非同步載入 GA4。
 
 ## 更新產品資料
 
@@ -176,3 +178,87 @@ CSS 快取：六頁 stylesheet URL 使用內容雜湊版本參數。每次修改
 WEB-004 現行 Typography 與產品 Placeholder 規則、全部 24 項驗證回報见 [WEB004.md](WEB004.md)。首頁已移除舊紙張／同心圓插圖與相關 CSS；先前交付紀錄中的概念圖描述為歷史狀態。
 
 交班頁追加更新：目前共六張展示圖片，新增 DEMO 交班概要、剪貼簿分享與 Excel 備存說明，適用版本限制見圖片旁註記。原五張 V1.3.13 工程展示註記保留。僅供本機預覽。
+
+## Analytics
+
+### 集中設定與啟停
+
+`js/analytics.js` 頂部：
+
+- `GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'` 是明確 Placeholder，維持本機 dry-run，**不載入 Google、不建立 GA Cookie、不送任何資料**。Console 顯示 `Placeholder ID; dry run only. No data sent.`，不假稱正式啟用。
+- `ANALYTICS_ENABLED = false` 全站停用；`true` 開啟架構。填入自己 GA4 網頁資料串流提供的正式 Measurement ID 後才會啟用 Google tag。不要把 Measurement Protocol API secret 放入公開網站。
+- 每頁只引用一次有 `defer` 的 analytics.js；Google script 動態 `async` 載入，不阻擋內容。失敗時網站照常可用。不要再加入第二份 gtag／GTM。
+- 修改 analytics.js（包含正式 ID／開關）後，更新六頁 script URL 的 `?v=` 內容雜湊，避免快取舊設定。
+- 正式初始化 Console：`[Chaleur Analytics] Analytics enabled.`；只代表程式初始化，是否入站仍須在 GA 後台驗證。
+- `REQUIRE_CONSENT` 是未來 Consent UI 的載入閘門；設為 `true` 時，只有已保存同意才載入 GA。UI 可呼叫 `window.chaleurAnalytics.setConsent(true/false)`；false 先停止追蹤並重新載入，讓 Google tag 離開頁面。選擇保存在 `chaleurAnalyticsConsent`。明確 denied 即使尚未要求 Consent 也會阻止載入。接口本身不是 Cookie banner，撤回不會自動刪除已有 Cookie。
+
+### 管理者流量排除
+
+- 開啟：`https://linhigo301.github.io/chaleur-studio-site/?internal=1`
+- 解除：`https://linhigo301.github.io/chaleur-studio-site/?internal=0`
+- localStorage key：`chaleurAnalyticsInternal`，值為字串 `true`；解除時移除 key。
+- 在 GA 初始化前處理；排除時不載入 Google、不建立 dataLayer、不送 Page View 或互動事件。Console 顯示 `[Chaleur Analytics] Internal traffic excluded.`。
+- `history.replaceState()` 僅刪除 internal，保留其他 query、UTM、hash 及 history state，不重新導頁。不要依賴 IP。
+- localStorage 按瀏覽器、裝置及 origin 保存：桌機 Chrome、桌機 Edge、iPhone Safari **各自執行一次** `?internal=1`。無痕模式、清除網站資料、換網域後需重設；同一 origin 的其他網站也可能共用 localStorage 命名空間，此 key 為本站專用。
+- 同 origin 已開分頁收到排除的 storage 事件後會停止後續追蹤；先前已載入的 Google script 需重新整理才會卸載，已送出的歷史資料無法追回。解除後其他既有分頁也請重新整理。
+- localStorage 無法讀寫時採停止分析，不讓網站故障，也不假稱排除偏好已永久儲存。
+
+### Page View 與事件
+
+六個現行頁面（兩個首頁、雙語交班系統、雙語 EMBERLITE）都載入相同 analytics.js。每次文件載入手動送一次 `page_view`，設定 `send_page_view: false` 避免 config 自動重複。hash／情境切換不算新頁。
+
+共用參數包含 `page_path`、`page_title`、`page_location`、`page_referrer`、`language`、`site_language`。本站語系固定 `zh-TW`／`en-GB`；page_path 取自頁內靜態對應語言的 alternate link，保留 GitHub Pages 子路徑，排除訪客 query／hash。新增頁面需保留正確 `lang`、title、對應自身語系的 alternate link 並引用相對路徑的 analytics.js；無有效頁面資料時不追蹤。
+
+| 事件 | 觸發 | 專用參數 |
+| --- | --- | --- |
+| `language_switch` | 點目前頁面的另一語言 | `from_language`, `to_language`, `current_page` |
+| `product_view_click` | 首頁 `.product-card .card-link`（含子元素） | `product`, `source_page`，以及共用 `language` |
+| `cta_click` | 探索、產品卡、聯絡、理念、截圖、流程／下載區導覽 | `cta_name`, `page`，以及共用 `language` |
+| `contact_click` | mailto 或 LINE 連結 | `contact_method: email` 或 `line` |
+| `demo_request`, `demo_download` | 僅保留名稱，未綁定 | 未啟用 |
+
+CTA 名稱集中為 `explore_tools`、`learn_product`、`contact_us`、`our_approach`、`view_screenshots`、`view_workflow`、`view_downloads`。`view_downloads` 是前往既有頁內區塊，不代表下載完成。既有 DEMO 下載本身不送 demo 事件。
+
+同一次產品卡點擊會各送一個 product_view_click 與 cta_click，供不同報表使用。產品名稱由靜態卡片 `/products/<slug>/` 路徑取得（現行 `handover-system`／`emberlite`）；新增產品沿用結構即可。事件採 document 委派，情境切換重繪後仍有效；不延遲或攔截導覽。聯絡點擊僅表示開啟聯絡方式，不表示訊息已送達。
+
+### UTM 與隱私
+
+使用標準 UTM，例如：
+
+```text
+https://linhigo301.github.io/chaleur-studio-site/?utm_source=email&utm_medium=outreach&utm_campaign=rehab_home_tw_01
+```
+
+其他工單活動名稱為 `dormitory_tw_01`／`uk_care_home_test_01`。`internal=1` 可同時存在，處理後上述 UTM 仍留在網址。交班頁語言切換沿用既有情境／query 行為；其他頁保持既有原生導覽，GA 正常以同瀏覽器 session 延續來源，不把 UTM 加到每個內部連結。
+
+`UTM_VALUES` 是集中公開標籤清單：目前接受 source=email、medium=outreach 與上述三個 campaign。`utm_id`、`utm_content`、`utm_term` 已預留空清單。新活動前先把**已審閱、無個資**的固定標籤加入清單；未核准值不會傳到 GA，瀏覽器網址不受影響。這是標準 UTM 的值限制，不是自訂追蹤參數。不可放入姓名、email、LINE ID、電話、個別收件人代碼或表單內容；允許清單仍需人工審核，不能用程式保證任何標籤都沒有個資。
+
+只有已核准 UTM 進入 page_location／對應 campaign 設定。其他 query（含 scenario）、fragment 一律不送；referrer 只保留 origin 以辨識來源網域，犧牲來源詳細路徑。事件不傳完整目標連結、聯絡文字、email／LINE ID、user_id、表單或任何產品內資料。網站不自建 IP 紀錄；使用 Google tag 時會有一般對 Google 的網路連線，不能宣稱 Google 不會接觸網路 IP。
+
+### 正式啟用前與 GA 後台
+
+1. 建立／選擇 GA4 網頁資料串流，取得正式 Measurement ID。
+2. **在該串流關閉 Enhanced Measurement（包含 history Page View、outbound click、file download、form interaction／site search 等），關閉自動 user-provided data 收集；不要透過其他 tag 自動收集聯絡連結或未清理 URL。** 本站只使用手動白名單事件，避免額外 click／file_download 傳送原始 URL 或產生重複 Page View。程式無法替你修改 GA 管理介面；此設定是正式 ID 啟用的前置條件。廣告儲存／個人化同意預設 denied，程式也關閉 Google signals／ad personalisation。
+3. GA 管理員建立需用於報表的事件範圍自訂維度，如 `site_language`、`from_language`、`to_language`、`product`、`contact_method`、`cta_name`。主要用戶／瀏覽數、網頁路徑與來源使用 GA 內建報表；`utm_medium=outreach` 可能歸入 Unassigned channel，應先看 Session source / medium 與 Session campaign。
+4. 正式 ID 上線後，以非管理者的獨立測試瀏覽器確認 Realtime／DebugView 及 Network；尚未完成前，不宣稱 GA4 已收到資料。Console debug 功能只輸出本機資料，不會自動設定 GA `debug_mode`。
+
+依 Google 文件，[pageview 與 Enhanced Measurement](https://developers.google.com/analytics/devguides/collection/ga4/views)、[設定參數](https://developers.google.com/analytics/devguides/collection/ga4/reference/config)、[Consent mode](https://developers.google.com/tag-platform/security/guides/consent) 是後續維護依據。
+
+### UK／EU Consent 待確認
+
+**目前 `REQUIRE_CONSENT=false`。Placeholder 本身不載入 GA；換成正式 ID 後，正常訪客會使用 GA 的非必要 Analytics Cookie。正式向 UK／EU 大量推廣前，需完成 Consent／Cookie 機制確認。** 必須完成適當的同意 UI、同意前封鎖、撤回／Cookie 清理、隱私揭露及實際地區適用性確認，再啟用相應策略。Consent 接口只是技術預留，不代表已符合任何國家全部隱私法規；Consent mode 也不會自動替網站取得使用者同意。
+
+公開網站流量分析與交班系統的 Local-first／本機資料保存分開；此檔案不植入交班桌面 App 或 EMBERLITE App。
+
+### 本機測試
+
+用 HTTP 開啟網站，Console 執行：
+
+```js
+chaleurAnalytics.status()
+chaleurAnalytics.debug(true)
+```
+
+保留 Console log 後點語言、兩張產品卡、CTA、email／LINE，可看 `Dry run: <event>` 與清理過的參數。不會發送 Google 請求。依序測試 A `/`、B `/?internal=1`、C `/products/handover-system/`、D `/?internal=0`、E 重開網站；狀態應是 dry-run、internal、internal、dry-run、dry-run。正式 ID 下 A／D／E 才會是 enabled。
+
+可重跑 `node tests/analytics.cjs`；需要施工環境提供 Playwright 及 Chrome／Edge，或設定 `PLAYWRIGHT_MODULE` 為已安裝的 Playwright 模組路徑，`TEST_BROWSERS=chrome` 可只跑 Chrome。測試自行啟動 localhost 靜態 server，使用獨立 context、記憶體中的測試 ID 與離線 Google script 替身，封鎖所有外部流量，不修改正式 ID，不代表 Google 入站測試。網站本身不依賴 Playwright／Node 或建置流程。

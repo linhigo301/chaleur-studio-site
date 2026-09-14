@@ -151,7 +151,7 @@ window.handoverScenarios = {
               "html": "如果你目前仍使用 Excel、紙本或通訊軟體整理交班，也可以告訴我現在的工作方式，一起看看這套工具是否適合。"
             },
             "p-57": {
-              "html": "LINE ID · linhigo301"
+              "html": "<a href=\"https://line.me/ti/p/~linhigo301\">LINE ID · linhigo301</a>"
             }
           }
         },
@@ -300,7 +300,7 @@ window.handoverScenarios = {
               "html": "If you currently use Excel, paper or messaging apps for handovers, tell me how your team works. We can explore whether this tool would be a useful fit."
             },
             "p-57": {
-              "html": "LINE ID · linhigo301"
+              "html": "<a href=\"https://line.me/ti/p/~linhigo301\">LINE ID · linhigo301</a>"
             }
           }
         }
