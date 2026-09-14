@@ -19,8 +19,10 @@
 <link rel="alternate" hreflang="zh-TW" href="../../products/handover-system/">
 <link rel="alternate" hreflang="en-GB" href="../../en/products/handover-system/">
 <link rel="alternate" hreflang="x-default" href="../../products/handover-system/">
-<link rel="stylesheet" href="../../css/style.css?v=2a38a6969717">
+<link rel="stylesheet" href="../../css/style.css?v=86a09af5bf22">
 <script src="../../js/main.js" defer></script>
+<script src="../../js/handover-scenarios.js?v=80561e7fb198" defer></script>
+<script src="../../js/handover.js?v=623ab0824590" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">跳至主要內容</a>
@@ -30,57 +32,58 @@
 <div class="breadcrumb"><a href="../../">首頁</a> / <a href="../../#products">產品</a> / 交班系統</div>
 <header class="product-hero">
 <p class="eyebrow">Product 01 · Work / Organisation</p>
+<div class="scenario-picker"><label for="scenario">使用情境</label><div class="scenario-select-wrap"><select id="scenario" name="scenario" aria-controls="main"><option value="rehab-home">康復之家</option></select></div></div>
 <h1>小型機構交班系統</h1>
-<p class="intro">把交班、事件與後續處理，整理在同一個地方。</p>
-<p>為有固定值班與交班需求的小型住宿型單位設計，在自己的 Windows 電腦上記錄、查詢與追蹤日常工作。</p>
+<p class="intro" data-scenario-copy="p-01">把交班、事件與後續處理，整理在同一個地方。</p>
+<p data-scenario-copy="p-02">為有固定值班與交班需求的小型住宿型單位設計，在自己的 Windows 電腦上記錄、查詢與追蹤日常工作。</p>
 <div class="chips"><span class="chip">Windows 桌面</span><span class="chip">資料本機保存</span><span class="chip">離線可用</span></div>
-<div class="actions"><a class="button" href="#screenshots">看看實際操作 <span aria-hidden="true">↓</span></a><a class="text-link" href="#downloads">了解 DEMO 狀態</a></div>
+<div class="actions"><a class="button" href="#screenshots" data-scenario-copy="a-03">看看實際操作 <span aria-hidden="true">↓</span></a><a class="text-link" href="#downloads" data-scenario-copy="a-04">了解 DEMO 狀態</a></div>
 </header>
-<aside class="preview-notice"><p>以下畫面皆使用虛構資料，展示內容來自 ENGINEERING／DEMO 版本；實際可用功能依版本與權限而異。</p></aside>
+<aside class="preview-notice"><p data-scenario-copy="p-05">以下畫面皆使用虛構資料，展示內容來自 ENGINEERING／DEMO 版本；實際可用功能依版本與權限而異。</p></aside>
 <section class="workflow-feature" id="screenshots" aria-labelledby="screenshots-title">
-<div class="detail-grid feature-heading-grid"><p class="eyebrow">01 / Start the shift</p><h2 id="screenshots-title">接班開始<br>接續每件日常</h2><div><p>接班時先掌握待追蹤事項；工作中記錄新事件、追加後續處理；需要回看時，再依日期、狀態或關鍵字找回紀錄。</p><p>值班概要可複製到剪貼簿，方便貼至 LINE 或工作群組，並同時儲存為 Excel 檔案留存。</p></div></div>
+<div class="detail-grid feature-heading-grid"><p class="eyebrow">01 / Start the shift</p><h2 id="screenshots-title" data-scenario-copy="screenshots-title">接班開始<br>接續每件日常</h2><div><p data-scenario-copy="p-07">接班時先掌握待追蹤事項；工作中記錄新事件、追加後續處理；需要回看時，再依日期、狀態或關鍵字找回紀錄。</p><p data-scenario-copy="p-08">值班概要可複製到剪貼簿，方便貼至 LINE 或工作群組，並同時儲存為 Excel 檔案留存。</p></div></div>
 <figure class="product-screen">
 <a class="product-screen-frame" href="../../docs/product-handoff/screenshots/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-09-14%20010721.png" aria-label="查看原尺寸圖片 — 從本班概況查看待處理事件與需追蹤事項。"><img src="../../docs/product-handoff/screenshots/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-09-14%20010721.png" alt="從本班概況查看待處理事件與需追蹤事項。" width="1583" height="916" fetchpriority="high"></a>
 <figcaption><span class="screen-caption">從本班概況查看待處理事件與需追蹤事項。</span><span class="screen-badge">DEMO</span><a href="../../docs/product-handoff/screenshots/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-09-14%20010721.png">查看原尺寸圖片 ↗</a></figcaption>
 </figure></section>
 <section class="workflow-feature" id="feature-2" aria-labelledby="feature-2-title">
-<div class="detail-grid feature-heading-grid"><p class="eyebrow">02 / Build the timeline</p><h2 id="feature-2-title">從事件發生，<br>接續每一步處理</h2><div><p>透過交班週曆建立服務對象的日常事件，選取事件即可回看觀察、處理方式與新增後續進度，逐步建立接續處理的時間脈絡。</p></div></div>
+<div class="detail-grid feature-heading-grid"><p class="eyebrow">02 / Build the timeline</p><h2 id="feature-2-title" data-scenario-copy="feature-2-title">從事件發生，<br>接續每一步處理</h2><div><p data-scenario-copy="p-12">透過交班週曆建立服務對象的日常事件，選取事件即可回看觀察、處理方式與新增後續進度，逐步建立接續處理的時間脈絡。</p></div></div>
 <figure class="product-screen">
 <a class="product-screen-frame" href="../../docs/product-handoff/screenshots/resident-handover-week.jpg" aria-label="查看原尺寸圖片 — 從交班週曆查看服務對象事件與後續處理內容。"><img src="../../docs/product-handoff/screenshots/resident-handover-week.jpg" alt="從交班週曆查看服務對象事件與後續處理內容。" width="1920" height="1032" loading="lazy"></a>
 <figcaption><span class="screen-caption">從交班週曆查看服務對象事件與後續處理內容。</span><span class="screen-badge">V1.3.13 · ENGINEERING</span><a href="../../docs/product-handoff/screenshots/resident-handover-week.jpg">查看原尺寸圖片 ↗</a></figcaption>
 </figure></section>
 <section class="workflow-feature" id="feature-3" aria-labelledby="feature-3-title">
-<div class="detail-grid feature-heading-grid"><p class="eyebrow">03 / Find the context</p><h2 id="feature-3-title">找到事件，<br>也看得見後續</h2><div><p>依日期、處理狀態、追蹤狀態、優先級或關鍵字查找服務對象事件。</p><p>選取事件後，可直接回看原始內容、觀察、處理方式與後續追加的進度，不必重新翻找不同班次的紀錄。</p></div></div>
+<div class="detail-grid feature-heading-grid"><p class="eyebrow">03 / Find the context</p><h2 id="feature-3-title" data-scenario-copy="feature-3-title">找到事件，<br>也看得見後續</h2><div><p data-scenario-copy="p-16">依日期、處理狀態、追蹤狀態、優先級或關鍵字查找服務對象事件。</p><p data-scenario-copy="p-17">選取事件後，可直接回看原始內容、觀察、處理方式與後續追加的進度，不必重新翻找不同班次的紀錄。</p></div></div>
 <figure class="product-screen">
 <a class="product-screen-frame" href="../../docs/product-handoff/screenshots/resident-events.jpg" aria-label="查看原尺寸圖片 — 查找服務對象事件，同時回看原始內容與後續進度。"><img src="../../docs/product-handoff/screenshots/resident-events.jpg" alt="查找服務對象事件，同時回看原始內容與後續進度。" width="1920" height="1032" loading="lazy"></a>
 <figcaption><span class="screen-caption">查找服務對象事件，同時回看原始內容與後續進度。</span><span class="screen-badge">V1.3.13 · ENGINEERING</span><a href="../../docs/product-handoff/screenshots/resident-events.jpg">查看原尺寸圖片 ↗</a></figcaption>
 </figure></section>
 <section class="workflow-feature" id="feature-4" aria-labelledby="feature-4-title">
-<div class="detail-grid feature-heading-grid"><p class="eyebrow">04 / Keep work connected</p><h2 id="feature-4-title">換了班，<br>處理脈絡仍在</h2><div><p>設備、環境與其他一般事項也能持續追加處理進度。每一次後續處理都附加在原事件中，方便不同班次了解事情目前進行到哪裡。</p></div></div>
+<div class="detail-grid feature-heading-grid"><p class="eyebrow">04 / Keep work connected</p><h2 id="feature-4-title" data-scenario-copy="feature-4-title">換了班，<br>處理脈絡仍在</h2><div><p data-scenario-copy="p-21">設備、環境與其他一般事項也能持續追加處理進度。每一次後續處理都附加在原事件中，方便不同班次了解事情目前進行到哪裡。</p></div></div>
 <figure class="product-screen">
 <a class="product-screen-frame" href="../../docs/product-handoff/screenshots/event-timeline.jpg" aria-label="查看原尺寸圖片 — 透過時間軸了解不同班次的處理進展。"><img src="../../docs/product-handoff/screenshots/event-timeline.jpg" alt="透過時間軸了解不同班次的處理進展。" width="1920" height="1032" loading="lazy"></a>
 <figcaption><span class="screen-caption">透過時間軸了解不同班次的處理進展。</span><span class="screen-badge">V1.3.13 · ENGINEERING</span><a href="../../docs/product-handoff/screenshots/event-timeline.jpg">查看原尺寸圖片 ↗</a></figcaption>
 </figure></section>
 <section class="workflow-feature" id="feature-5" aria-labelledby="feature-5-title">
-<div class="detail-grid feature-heading-grid"><p class="eyebrow">05 / See the month</p><h2 id="feature-5-title">從一位服務對象出發，<br>回看整個月</h2><div><p>服務對象月曆將事件放回日期中，搭配月份總件數與事件分類，方便查看一段時間內發生過哪些事情，也能切換月份回看歷史。</p></div></div>
+<div class="detail-grid feature-heading-grid"><p class="eyebrow">05 / See the month</p><h2 id="feature-5-title" data-scenario-copy="feature-5-title">從一位服務對象出發，<br>回看整個月</h2><div><p data-scenario-copy="p-25">服務對象月曆將事件放回日期中，搭配月份總件數與事件分類，方便查看一段時間內發生過哪些事情，也能切換月份回看歷史。</p></div></div>
 <figure class="product-screen calendar-screen">
 <a class="product-screen-frame" href="../../docs/product-handoff/screenshots/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-09-11%20014243.png" aria-label="查看原尺寸圖片 — 回看服務對象每月事件分布、總件數與分類。"><img src="../../docs/product-handoff/screenshots/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-09-11%20014243.png" alt="回看服務對象每月事件分布、總件數與分類。" width="956" height="714" loading="lazy"></a>
 <figcaption><span class="screen-caption">回看服務對象每月事件分布、總件數與分類。</span><span class="screen-badge">V1.3.13 · ENGINEERING</span><a href="../../docs/product-handoff/screenshots/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202026-09-11%20014243.png">查看原尺寸圖片 ↗</a></figcaption>
 </figure></section>
 <section class="detail-grid product-summary-grid" id="capabilities" aria-labelledby="capabilities-title">
-<h2 id="capabilities-title">日常工作所需</h2>
-<div><div class="capability-grid"><div class="capability-group"><h3>交班</h3><ul><li>交班週曆與月曆</li><li>待追蹤事項</li></ul></div><div class="capability-group"><h3>事件</h3><ul><li>服務對象事件</li><li>設備／環境等一般事項</li><li>跨班進度與狀態追蹤</li></ul></div><div class="capability-group"><h3>查詢與留存</h3><ul><li>條件查詢與歷史回看</li><li>查詢結果／單一事件 Excel 匯出</li></ul></div><div class="capability-group"><h3>基礎管理</h3><ul><li>服務對象與房床管理</li><li>工作人員與角色權限</li><li>版本允許的備份與還原</li></ul></div></div></div>
+<h2 id="capabilities-title" data-scenario-copy="capabilities-title">日常工作所需</h2>
+<div><div class="capability-grid"><div class="capability-group"><h3 data-scenario-copy="h3-29">交班</h3><ul><li data-scenario-copy="li-30">交班週曆與月曆</li><li data-scenario-copy="li-31">待追蹤事項</li></ul></div><div class="capability-group"><h3 data-scenario-copy="h3-32">事件</h3><ul><li data-scenario-copy="li-33">服務對象事件</li><li data-scenario-copy="li-34">設備／環境等一般事項</li><li data-scenario-copy="li-35">跨班進度與狀態追蹤</li></ul></div><div class="capability-group"><h3 data-scenario-copy="h3-36">查詢與留存</h3><ul><li data-scenario-copy="li-37">條件查詢與歷史回看</li><li data-scenario-copy="li-38">查詢結果／單一事件 Excel 匯出</li></ul></div><div class="capability-group"><h3 data-scenario-copy="h3-39">基礎管理</h3><ul><li data-scenario-copy="li-40">服務對象與房床管理</li><li data-scenario-copy="li-41">工作人員與角色權限</li><li data-scenario-copy="li-42">版本允許的備份與還原</li></ul></div></div></div>
 </section><section class="detail-grid product-summary-grid" id="local-first" aria-labelledby="local-first-title">
-<h2 id="local-first-title">資料留在本機，<br>降低雲端曝露風險</h2>
-<div><div class="callout"><p>核心資料以本機保存，日常記錄、查詢與交班不需要持續將工作資料傳送至雲端。減少不必要的外部資料傳輸，同時保留離線工作的能力。</p><p class="product-note">實際資料安全仍取決於使用電腦的帳號權限、裝置存取、備份方式及匯出檔案管理。</p></div></div>
+<h2 id="local-first-title" data-scenario-copy="local-first-title">資料留在本機，<br>降低雲端曝露風險</h2>
+<div><div class="callout"><p data-scenario-copy="p-44">核心資料以本機保存，日常記錄、查詢與交班不需要持續將工作資料傳送至雲端。減少不必要的外部資料傳輸，同時保留離線工作的能力。</p><p class="product-note" data-scenario-copy="p-45">實際資料安全仍取決於使用電腦的帳號權限、裝置存取、備份方式及匯出檔案管理。</p></div></div>
 </section><section class="detail-grid product-summary-grid" id="environment" aria-labelledby="environment-title">
-<h2 id="environment-title">使用環境</h2>
-<div><table class="product-specs"><thead><tr><th scope="col">項目</th><th scope="col">目前狀態</th></tr></thead><tbody><tr><th scope="row">平台</th><td>Windows 桌面</td></tr><tr><th scope="row">操作方式</th><td>本機單機</td></tr><tr><th scope="row">網路</th><td>核心功能可離線操作</td></tr><tr><th scope="row">顯示基準</th><td>1600 × 900</td></tr><tr><th scope="row">最低顯示</th><td>1280 × 720</td></tr></tbody></table><p class="product-note">正式最低 Windows 版本、硬體規格與資料量上限仍在最終驗證中。</p></div>
+<h2 id="environment-title" data-scenario-copy="environment-title">使用環境</h2>
+<div><table class="product-specs"><thead><tr><th scope="col">項目</th><th scope="col">目前狀態</th></tr></thead><tbody><tr><th scope="row">平台</th><td>Windows 桌面</td></tr><tr><th scope="row">操作方式</th><td>本機單機</td></tr><tr><th scope="row">網路</th><td>核心功能可離線操作</td></tr><tr><th scope="row">顯示基準</th><td>1600 × 900</td></tr><tr><th scope="row">最低顯示</th><td>1280 × 720</td></tr></tbody></table><p class="product-note" data-scenario-copy="p-47">正式最低 Windows 版本、硬體規格與資料量上限仍在最終驗證中。</p></div>
 </section><section class="detail-grid product-summary-grid" id="downloads" aria-labelledby="downloads-title">
-<h2 id="downloads-title">DEMO 與正式版狀態</h2>
-<div><div class="download-grid"><div class="download-item"><h3>DEMO 展示版</h3><p>內建虛構的服務對象、房床、事件與交班資料，可直接體驗主要操作流程，不需要輸入真實個人資料。</p><p class="download-meta">Windows · 繁體中文 · V1.3.13</p><a class="button" href="https://github.com/linhigo301/chaleur-studio-site/releases/download/handover-demo-v1.3.13/handover-demo-v1.3.13-windows.zip">下載 DEMO</a></div><div class="download-item"><h3>正式版本</h3><p>核心功能已完成，目前進行最終實機、安裝流程與人工驗收。</p><span class="unavailable">尚未正式發行</span></div></div></div>
+<h2 id="downloads-title" data-scenario-copy="downloads-title">DEMO 與正式版狀態</h2>
+<div><div class="download-grid"><div class="download-item"><h3 data-scenario-copy="h3-49">DEMO 展示版</h3><p data-scenario-copy="p-50">內建虛構的服務對象、房床、事件與交班資料，可直接體驗主要操作流程，不需要輸入真實個人資料。</p><p class="download-meta" data-scenario-copy="p-51">Windows · 繁體中文 · V1.3.13</p><a class="button" href="https://github.com/linhigo301/chaleur-studio-site/releases/download/handover-demo-v1.3.13/handover-demo-v1.3.13-windows.zip" data-scenario-copy="a-52">下載 DEMO</a></div><div class="download-item"><h3 data-scenario-copy="h3-53">正式版本</h3><p data-scenario-copy="p-54">核心功能已完成，目前進行最終實機、安裝流程與人工驗收。</p><span class="unavailable">尚未正式發行</span></div></div></div>
 </section></div>
-<section class="contact" id="contact" aria-labelledby="contact-title"><div class="container contact-inner"><div><p class="eyebrow">Let's talk</p><h2 id="contact-title">想看看它是否適合你的機構？</h2><p>如果你目前仍使用 Excel、紙本或通訊軟體整理交班，也可以告訴我現在的工作方式，一起看看這套工具是否適合。</p></div><div class="contact-details"><a class="contact-email" href="mailto:linhigo301@gmail.com">EMAIL · linhigo301@gmail.com ↗</a><p>LINE ID · linhigo301</p></div></div></section>
+<section class="contact" id="contact" aria-labelledby="contact-title"><div class="container contact-inner"><div><p class="eyebrow">Let's talk</p><h2 id="contact-title" data-scenario-copy="contact-title">想看看它是否適合你的機構？</h2><p data-scenario-copy="p-56">如果你目前仍使用 Excel、紙本或通訊軟體整理交班，也可以告訴我現在的工作方式，一起看看這套工具是否適合。</p></div><div class="contact-details"><a class="contact-email" href="mailto:linhigo301@gmail.com">EMAIL · linhigo301@gmail.com ↗</a><p data-scenario-copy="p-57">LINE ID · linhigo301</p></div></div></section>
 <div class="container"><div class="product-bottom"><a class="text-link" href="../../#products">← 返回所有產品</a></div></div>
 </main>
 <footer class="footer"><div class="container footer-inner"><a class="wordmark" href="../../">Chaleur <span>Studio</span></a><p>讓工具回歸簡單，讓日常更順。</p><p>© Chaleur Studio</p></div></footer>

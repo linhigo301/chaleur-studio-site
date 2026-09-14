@@ -101,6 +101,17 @@ a:focus-visible,button:focus-visible { outline: 3px solid var(--accent); outline
 .product-hero { max-width: 840px; padding: 60px 0; }
 .product-hero h1 { margin: 0 0 24px; }
 .product-hero .intro { max-width: 700px; }
+.scenario-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 0 0 28px; font-size: var(--type-control); }
+.scenario-picker label { color: var(--muted-strong); }
+.scenario-select-wrap { position: relative; max-width: 100%; min-width: 0; }
+.scenario-select-wrap::after { content: ''; position: absolute; right: 17px; top: calc(50% - 5px); width: 7px; height: 7px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); pointer-events: none; }
+.scenario-picker select { appearance: none; display: block; width: 100%; max-width: 100%; min-height: 48px; padding: 10px 40px 10px 14px; border: 1px solid var(--line); border-radius: 2px; background: var(--white); color: var(--ink); font: inherit; cursor: pointer; }
+.scenario-picker select:hover { border-color: var(--muted); background: var(--sage); }
+.scenario-picker select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (max-width: 400px) {
+  .scenario-select-wrap { width: 100%; }
+  .scenario-picker select { font-size: .875rem; }
+}
 .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
 .chip { border: 1px solid var(--line); padding: 5px 12px; border-radius: 2px; }
 .detail-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; padding: 58px 0; border-top: 1px solid var(--line); }
