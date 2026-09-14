@@ -4,7 +4,7 @@
   if (window.chaleurAnalytics) return;
 
   // Central configuration. The placeholder never loads Google or sends data.
-  const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  const GA_MEASUREMENT_ID = 'G-5VCL6VNZ69';
   const ANALYTICS_ENABLED = true;
   const REQUIRE_CONSENT = false; // Set true when integrating a consent UI.
   const INTERNAL_KEY = 'chaleurAnalyticsInternal';

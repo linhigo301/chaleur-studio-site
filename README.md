@@ -1,5 +1,7 @@
 # Chaleur Studio 官方網站
 
+GA4 正式接入：使用者已提供並確認網頁串流 `Chaleur Studio Website`（串流 ID `15775818958`），評估 ID 為 `G-5VCL6VNZ69`，截圖確認加強型評估已關閉。網站改用正式 ID，正常訪客開始送出 Analytics；以下 Placeholder 發布敘述為先前紀錄。管理者排除與隱私限制維持。
+
 2026-09-14 WEB-006 Analytics：六頁已加入集中 GA4 架構、瀏覽器管理者排除與四種互動事件。使用者已確認發布，透過既有 GitHub Pages main 分支部署。Measurement ID 仍為 Placeholder，沒有正式送出 Analytics。操作與啟用前待辦見下方 Analytics；本次工單與既有同編號的產品頁收尾工單分開記錄於 [Analytics 交付紀錄](WEB006-ANALYTICS.md)。
 
 2026-09-14 EMBERLITE：完成繁中／en-GB 產品頁與首頁卡片，定位為暗房放大機曝光控制系統，採放相記錄、光譜詳情、濾鏡庫三張實機圖。圖片位於 images/emberlite/；未複製內部交接文件或產品原始碼。Chrome 375／768／1440px 四頁共 12 組檢查通過，並檢視桌機與手機排版。使用者已確認發布，透過既有 GitHub Pages main 分支部署；以下 EMBERLITE 占位描述為歷史紀錄。
@@ -183,7 +185,7 @@ WEB-004 現行 Typography 與產品 Placeholder 規則、全部 24 項驗證回�
 
 ### 集中設定與啟停
 
-`js/analytics.js` 頂部：
+`js/analytics.js` 頂部目前使用正式 ID `G-5VCL6VNZ69`；如需回到 dry-run，改回 `G-XXXXXXXXXX`：
 
 - `GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'` 是明確 Placeholder，維持本機 dry-run，**不載入 Google、不建立 GA Cookie、不送任何資料**。Console 顯示 `Placeholder ID; dry run only. No data sent.`，不假稱正式啟用。
 - `ANALYTICS_ENABLED = false` 全站停用；`true` 開啟架構。填入自己 GA4 網頁資料串流提供的正式 Measurement ID 後才會啟用 Google tag。不要把 Measurement Protocol API secret 放入公開網站。
@@ -246,7 +248,7 @@ https://linhigo301.github.io/chaleur-studio-site/?utm_source=email&utm_medium=ou
 
 ### UK／EU Consent 待確認
 
-**目前 `REQUIRE_CONSENT=false`。Placeholder 本身不載入 GA；換成正式 ID 後，正常訪客會使用 GA 的非必要 Analytics Cookie。正式向 UK／EU 大量推廣前，需完成 Consent／Cookie 機制確認。** 必須完成適當的同意 UI、同意前封鎖、撤回／Cookie 清理、隱私揭露及實際地區適用性確認，再啟用相應策略。Consent 接口只是技術預留，不代表已符合任何國家全部隱私法規；Consent mode 也不會自動替網站取得使用者同意。
+**目前 `REQUIRE_CONSENT=false` 且已使用正式 ID，正常訪客會使用 GA 的非必要 Analytics Cookie。正式向 UK／EU 大量推廣前，需完成 Consent／Cookie 機制確認。** 必須完成適當的同意 UI、同意前封鎖、撤回／Cookie 清理、隱私揭露及實際地區適用性確認，再啟用相應策略。Consent 接口只是技術預留，不代表已符合任何國家全部隱私法規；Consent mode 也不會自動替網站取得使用者同意。
 
 公開網站流量分析與交班系統的 Local-first／本機資料保存分開；此檔案不植入交班桌面 App 或 EMBERLITE App。
 
@@ -259,6 +261,6 @@ chaleurAnalytics.status()
 chaleurAnalytics.debug(true)
 ```
 
-保留 Console log 後點語言、兩張產品卡、CTA、email／LINE，可看 `Dry run: <event>` 與清理過的參數。不會發送 Google 請求。依序測試 A `/`、B `/?internal=1`、C `/products/handover-system/`、D `/?internal=0`、E 重開網站；狀態應是 dry-run、internal、internal、dry-run、dry-run。正式 ID 下 A／D／E 才會是 enabled。
+正式 ID 下請避免直接用本機網站進行大量測試，以免送入正式 GA。需要純本機 Console dry-run 時，先在未發布的測試副本把 ID 改回 `G-XXXXXXXXXX`；保留 Console log 後點語言、兩張產品卡、CTA、email／LINE，可看 `Dry run: <event>` 與清理過的參數，不會發送 Google 請求。依序測試 A `/`、B `/?internal=1`、C `/products/handover-system/`、D `/?internal=0`、E 重開網站；狀態應是 dry-run、internal、internal、dry-run、dry-run。正式 ID 下 A／D／E 才會是 enabled。
 
 可重跑 `node tests/analytics.cjs`；需要施工環境提供 Playwright 及 Chrome／Edge，或設定 `PLAYWRIGHT_MODULE` 為已安裝的 Playwright 模組路徑，`TEST_BROWSERS=chrome` 可只跑 Chrome。測試自行啟動 localhost 靜態 server，使用獨立 context、記憶體中的測試 ID 與離線 Google script 替身，封鎖所有外部流量，不修改正式 ID，不代表 Google 入站測試。網站本身不依賴 Playwright／Node 或建置流程。

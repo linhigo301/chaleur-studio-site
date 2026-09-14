@@ -29,3 +29,9 @@ Chrome、Edge；六頁 × 桌機 1440px／手機視窗 375px，共 24 組，連�
 ## 待完成條件
 
 正式 ID、GA4 Enhanced Measurement／資料設定、Realtime／DebugView 入站確認及 UK／EU Consent／Cookie 流程待完成。詳見 README。未宣稱符合所有國家法規，未開始下一階段。
+
+## 正式 ID 接入
+
+使用者在設定流程提供串流詳細資料：Chaleur Studio Website、網站網址正確、串流 ID `15775818958`、評估 ID `G-5VCL6VNZ69`，加強型評估顯示關閉。依既有發布授權接入正式 ID 並更新六頁 script 快取版本。隔離測試改為覆寫任意正式 ID，繼續使用離線替身，避免本機測試污染正式資料。先前 Placeholder 狀態為歷史紀錄；正式 ID 與 Enhanced Measurement 確認完成，Realtime／DebugView 後台確認、自訂維度、其他 GA 資料設定及 Consent／Cookie 待辦仍保留。
+
+正式 ID 接入後，Chrome／Edge 隔離測試 484 項再次通過；沒有從測試傳送資料到正式 GA。

@@ -30,8 +30,9 @@ async function setup(browser, { width = 1440, real = true, blocked = false, cons
   let googleLoads = 0;
   let code = source;
   // This ID exists only in an intercepted response; all external network is blocked.
-  if (real) code = code.replace("const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'", "const GA_MEASUREMENT_ID = 'G-OFFLINETEST'");
-  if (badID) code = code.replace("const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'", "const GA_MEASUREMENT_ID = 'invalid'");
+  const fixtureID = badID ? 'invalid' : real ? 'G-OFFLINETEST' : 'G-XXXXXXXXXX';
+  assert.match(code, /const GA_MEASUREMENT_ID = '[^']+'/);
+  code = code.replace(/const GA_MEASUREMENT_ID = '[^']+'/, `const GA_MEASUREMENT_ID = '${fixtureID}'`);
   if (consent) code = code.replace('const REQUIRE_CONSENT = false', 'const REQUIRE_CONSENT = true');
   if (disabled) code = code.replace('const ANALYTICS_ENABLED = true', 'const ANALYTICS_ENABLED = false');
   await context.route('**/*', async route => {
